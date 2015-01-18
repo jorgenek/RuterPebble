@@ -1,0 +1,51 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "jorgen.ekeland@gmail.com",
+    "longName": "Transport in Oslo city",
+    "projectType": "pebblejs",
+    "resources": {
+        "media": [
+            {
+                "file": "images/menu_icon.png",
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/logo_splash.png",
+                "name": "IMAGE_LOGO_SPLASH",
+                "type": "png"
+            },
+            {
+                "file": "images/tile_splash.png",
+                "name": "IMAGE_TILE_SPLASH",
+                "type": "png"
+            },
+            {
+                "file": "fonts/UbuntuMono-Regular.ttf",
+                "name": "MONO_FONT_14",
+                "type": "font"
+            },
+            {
+                "file": "images/ruter_hashtag.png",
+                "menuIcon": true,
+                "name": "IMAGES_RUTER_HASHTAG_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/logo_ruter_bw.png",
+                "name": "IMAGES_LOGO_RUTER_BW_PNG",
+                "type": "png"
+            }
+        ]
+    },
+    "shortName": "Ruter#Pebble",
+    "uuid": "0c322f01-e825-42fa-a4f4-a33941480b15",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
