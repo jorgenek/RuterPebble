@@ -41,10 +41,10 @@
             }
         ]
     },
-    "shortName": "Ruter#Pebble",
+    "shortName": "Ruter # Pebble",
     "uuid": "0c322f01-e825-42fa-a4f4-a33941480b15",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": false
     }

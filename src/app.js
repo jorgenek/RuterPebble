@@ -203,6 +203,12 @@ var stopMenu = new UI.Menu({
         stopId: '3012131'
       }
     },{
+      title: 'Sannergata',
+      subtitle: 'Buss',
+      data: {
+        stopId: '3010521'
+      }
+    },{
       title: 'Storo (pa brua)',
       subtitle: 'Trikk, Buss',
       data: {
