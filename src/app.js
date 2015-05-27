@@ -93,9 +93,13 @@ var parseFeed = function (data, quantity) {
 
     // Get date/time substring
 
-    var transportNr = data[i].LineRef;
+    var transportNr = data[i].PublishedLineName;
 
     var transportDest = data[i].DestinationDisplay;
+    
+    if (!transportDest) {
+      transportDest = data[i].DestinationName;
+    }
 
     transportDest = replaceSpecialChar(transportDest);
 
@@ -113,15 +117,15 @@ var parseFeed = function (data, quantity) {
       subtitle: time,
       data: {
         destination: data[i].DestinationDisplay,
+        destinationName: data[i].DestinationName,
         transportType: data[i].VehicleMode,
         aimedTime: data[i].AimedArrivalTime,
         expectedTime: data[i].ExpectedArrivalTime,
-        line: data[i].LineRef,
+        line: data[i].PublishedLineName,
         platform: data[i].DeparturePlatformName,
       }
     });
   }
-
   return items;
 };
 
@@ -142,97 +146,164 @@ var stopMenu = new UI.Menu({
   sections: [{
     title: 'Holdeplasser',
     items: [
+       {
+        title: 'Adamsstuen',
+        subtitle: 'Trikk, Buss',
+        data: {
+          stopId: '3010065'
+        }
+      },{
+        title: 'Brugata',
+        subtitle: 'Trikk, Buss',
+        data: {
+          stopId: '3010065'
+        }
+      },{
+        title: 'Carl Berners plass [T-bane]',
+        subtitle: 'T-bane',
+        data: {
+          stopId: '3011400'
+        }
+      },{
+        title: 'Carl Berner(Trondheimsvn)',
+        subtitle: 'Trikk, Buss',
+        data: {
+          stopId: '3011401'
+        }
+      },{
+        title: 'Carl Berner(Chr.Mich.g.)',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3011402'
+        }
+      },{
+        title: 'Hammersborggata(Storgata)',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3010066'
+        }
+      },{
+        title: 'Hovik kirke',
+        subtitle: 'Buss',
+        data: {
+          stopId: '2190205'
+        }
+      },{
+        title: 'IT Fornebu',
+        subtitle: 'Buss',
+        data: {
+          stopId: '2190018'
+        }
+      },{
+        title: 'Jernbanetorget',
+        subtitle: 'T-bane',
+        data: {
+          stopId: '3010011'
+        }
+      },{
+        title: 'Jernbanet. (B.Gunnerus g.)',
+        subtitle: 'Trikk, Buss',
+        data: {
+          stopId: '3010012'
+        }
+      },{
+        title: 'Lysaker brygge',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3012554'
+        }
+      },{
+        title: 'Lysaker stasjon(sydside Dr.vn)',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3012552'
+        }
+      },{
+        title: 'Majorstuen',
+        subtitle:'T-bane',
+        data: {
+          stopId: '3010200'
+        }
+      },{
+        title: 'Nationaltheatret',
+        subtitle: 'T-bane',
+        data: {
+          stopId: '3010031'    
+        }
+      },{
+        title: 'Nationaltheatret',
+        subtitle: 'Tog',
+        data: {
+          stopId: '3010030'    
+        }
+      },{
+        title: 'Nycoveien',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3010447'
+        }
+      },{
+        title: 'Nydalen',
+        subtitle: 'T-bane',
+        data: {
+          stopId: '3012130'
+        }
+      },{
+        title: 'Nydalen stasjon',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3012126'
+        }
+      },{
+        title: 'Nydalen T',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3012131'
+        }
+      },{
+        title: 'Oslo S [Tog]',
+        subtitle: 'Tog',
+        data: {
+          stopId: '3010010'
+        }
+      },{
+        title: 'Sannergata',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3010521'
+        }
+      },
       {
-      title: 'IT Fornebu',
-      subtitle: 'Buss',
-      data: {
-        stopId: '2190018'
-      }
-    },{
-      title: 'Jernbanetorget',
-      subtitle: 'T-bane',
-      data: {
-        stopId: '3010011'
-      }
-    }, {
-      title: 'Lysaker brygge',
-      subtitle: 'Buss',
-      data: {
-        stopId: '3012554'
-      }
-    },{
-      title: 'Lysaker stasjon (nordside Dr.vn)',
-      subtitle: 'Buss',
-      data: {
-        stopId: '3012551'
-      }
-    },{
-      title: 'Majorstuen',
-      subtitle:'T-bane',
-      data: {
-        stopId: '3010200'
-      }
-    },{
-      title: 'Nationaltheatret',
-      subtitle: 'T-bane',
-      data: {
-        stopId: '3010031'    
-      }
-    },{
-      title: 'Nycoveien',
-      subtitle: 'Buss',
-      data: {
-        stopId: '3010447'
-      }
-    },{
-      title: 'Nydalen',
-      subtitle: 'T-bane',
-      data: {
-        stopId: '3012130'
-      }
-    },{
-      title: 'Nydalen stasjon',
-      subtitle: 'Buss',
-      data: {
-        stopId: '3012126'
-      }
-    },{
-      title: 'Nydalen T',
-      subtitle: 'Buss',
-      data: {
-        stopId: '3012131'
-      }
-    },{
-      title: 'Sannergata',
-      subtitle: 'Buss',
-      data: {
-        stopId: '3010521'
-      }
-    },{
-      title: 'Storo (pa brua)',
-      subtitle: 'Trikk, Buss',
-      data: {
-        stopId: '3012121'
-      }
-    },{
-      title: 'Stortinget [T-bane]',
-      subtitle: 'T-bane',
-      data: {
-        stopId: '3010020'
-      }
-    },{
-      title: 'Ulleval stadion (Ringveien)',
-      subtitle: 'Buss',
-      data: {
-        stopId: '3012212'
-      }
-    },{
-      title: 'Ulleval stadion [T-bane]',
-      subtitle: 'T-bane',
-      data: {
-        stopId: '3012210'
-      }
-    }]
+        title: 'Ski [Tog]',
+        subtitle: 'Tog',
+        data: {
+          stopId: '2130300'
+        }
+      },{
+        title: 'Storo (pa brua)',
+        subtitle: 'Trikk, Buss',
+        data: {
+          stopId: '3012121'
+        }
+      },{
+        title: 'Stortinget [T-bane]',
+        subtitle: 'T-bane',
+        data: {
+          stopId: '3010020'
+        }
+      },{
+        title: 'Ulleval stadion (Ringveien)',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3012212'
+        }
+      },{
+        title: 'Ulleval stadion [T-bane]',
+        subtitle: 'T-bane',
+        data: {
+          stopId: '3012210'
+        }
+      }]
   }]
 });
 
@@ -248,7 +319,7 @@ stopMenu.on('select', function(e) {
     },
     function(data) {
       // Create an array of Menu items
-      var menuItems = parseFeed(data, 10);
+      var menuItems = parseFeed(data, 20);
 
       // Construct Menu to show to user
       var resultsMenu = new UI.Menu({
@@ -287,6 +358,11 @@ stopMenu.on('select', function(e) {
         }
 
         var subtitleDest = e.item.data.destination;
+        
+          if (!subtitleDest) {
+            subtitleDest = e.item.data.destinationName;
+        }    
+        
         subtitleDest = subtitleDest.charAt(0).toUpperCase() + subtitleDest.substring(1);
 
         if (subtitleDest.length > 12) {
@@ -297,7 +373,7 @@ stopMenu.on('select', function(e) {
 
         var content = '\nForventet tid: ' + timeCheck(getTimeDifferenceFromNow(new Date(parseInt(e.item.data.expectedTime.substr(6)))), new Date(parseInt(e.item.data.expectedTime.substr(6)))) +
             '\nForsinkelse: ' + getTimeDifferenceDeviation(new Date(parseInt(e.item.data.expectedTime.substr(6))), new Date(parseInt(e.item.data.aimedTime.substr(6)))) + " min" + 
-            '\nTransport type: ' + transportType +
+            '\nTransporttype: ' + transportType +
             '\nPlatform: ' + e.item.data.platform;
 
         // Create the Card for detailed view

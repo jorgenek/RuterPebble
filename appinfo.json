@@ -3,8 +3,8 @@
     "capabilities": [
         ""
     ],
-    "companyName": "jorgen.ekeland@gmail.com",
-    "longName": "Transport in Oslo city",
+    "companyName": "J\u00f8rgen Ekeland",
+    "longName": "#OsloTravel",
     "projectType": "pebblejs",
     "resources": {
         "media": [
@@ -41,10 +41,11 @@
             }
         ]
     },
-    "shortName": "Ruter # Pebble",
+    "sdkVersion": "3",
+    "shortName": "#OsloTravel",
     "uuid": "0c322f01-e825-42fa-a4f4-a33941480b15",
     "versionCode": 1,
-    "versionLabel": "1.1",
+    "versionLabel": "1.4",
     "watchapp": {
         "watchface": false
     }
