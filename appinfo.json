@@ -11,17 +11,17 @@
             {
                 "file": "images/menu_icon.png",
                 "name": "IMAGE_MENU_ICON",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/logo_splash.png",
                 "name": "IMAGE_LOGO_SPLASH",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/tile_splash.png",
                 "name": "IMAGE_TILE_SPLASH",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "fonts/UbuntuMono-Regular.ttf",
@@ -32,21 +32,26 @@
                 "file": "images/ruter_hashtag.png",
                 "menuIcon": true,
                 "name": "IMAGES_RUTER_HASHTAG_PNG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/logo_ruter_bw.png",
                 "name": "IMAGES_LOGO_RUTER_BW_PNG",
-                "type": "png"
+                "type": "bitmap"
             }
         ]
     },
     "sdkVersion": "3",
     "shortName": "#OsloTravel",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
     "uuid": "0c322f01-e825-42fa-a4f4-a33941480b15",
     "versionCode": 1,
-    "versionLabel": "1.4",
+    "versionLabel": "1.5",
     "watchapp": {
+        "hiddenApp": false,
         "watchface": false
     }
 }

@@ -147,10 +147,22 @@ var stopMenu = new UI.Menu({
     title: 'Holdeplasser',
     items: [
        {
-        title: 'Adamsstuen',
+        title: 'Adamstuen',
         subtitle: 'Trikk, Buss',
         data: {
-          stopId: '3010065'
+          stopId: '3010314'
+        }
+      },{
+        title: 'Ark. Riv.pl.(Gri. g.)',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3010406'
+        }
+      },{
+        title: 'Ark. Riv.pl.(Uel. g.)',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3010405'
         }
       },{
         title: 'Brugata',
@@ -159,19 +171,19 @@ var stopMenu = new UI.Menu({
           stopId: '3010065'
         }
       },{
-        title: 'Carl Berners plass [T-bane]',
+        title: 'Carl B. pl.[T-bane]',
         subtitle: 'T-bane',
         data: {
           stopId: '3011400'
         }
       },{
-        title: 'Carl Berner(Trondheimsvn)',
+        title: 'Carl B.(Trondheimsvn)',
         subtitle: 'Trikk, Buss',
         data: {
           stopId: '3011401'
         }
       },{
-        title: 'Carl Berner(Chr.Mich.g.)',
+        title: 'Carl B.(Chr.Mich.g.)',
         subtitle: 'Buss',
         data: {
           stopId: '3011402'
@@ -267,13 +279,24 @@ var stopMenu = new UI.Menu({
           stopId: '3010010'
         }
       },{
+        title: 'Sagene (i Uelands g.)',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3010412'
+        }
+      },{
+        title: 'Sagene (i Kierschowsg.)',
+        subtitle: 'Buss',
+        data: {
+          stopId: '3010410'
+        }
+      },{
         title: 'Sannergata',
         subtitle: 'Buss',
         data: {
           stopId: '3010521'
         }
-      },
-      {
+      },{
         title: 'Ski [Tog]',
         subtitle: 'Tog',
         data: {
@@ -292,13 +315,13 @@ var stopMenu = new UI.Menu({
           stopId: '3010020'
         }
       },{
-        title: 'Ulleval stadion (Ringveien)',
+        title: 'Ulleval st. (Ringveien)',
         subtitle: 'Buss',
         data: {
           stopId: '3012212'
         }
       },{
-        title: 'Ulleval stadion [T-bane]',
+        title: 'Ulleval st. [T-bane]',
         subtitle: 'T-bane',
         data: {
           stopId: '3012210'
@@ -308,13 +331,13 @@ var stopMenu = new UI.Menu({
 });
 
 stopMenu.on('select', function(e) {
-  // Make request to reis.trafikanten.no
+  // Make request to api.trafikanten.no
   var stopId = e.item.data.stopId;
   setStopID(stopId);
 
   ajax(
     {
-      url:'http://reis.trafikanten.no/ReisRest/RealTime/GetRealTimeData/' + stopId,
+      url:'http://api.trafikanten.no/ReisRest/RealTime/GetRealTimeData/' + stopId,
       type:'json'
     },
     function(data) {
@@ -396,7 +419,7 @@ stopMenu.on('select', function(e) {
         // Make another request        
         ajax(
           {
-            url:'http://reis.trafikanten.no/ReisRest/RealTime/GetRealTimeData/' + stopId,
+            url:'http://api.trafikanten.no/ReisRest/RealTime/GetRealTimeData/' + stopId,
             type:'json'
           },
           function(data) {
